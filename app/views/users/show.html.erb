@@ -7,11 +7,8 @@
     <li>[EMAIL :]<%= @user.email %></li>
     <li>[PASSWORD :]<%= @user.password %></li>
     <li>[COUNTRY :]<%= @user.country %></li>
+    <li><%= current_user %></li>
+    <li><%= User.find_by(id:session[:user_id]) %></li>
+    <li>@user.id  <%= @user.id%></li>
+    <li>session[:user_id]  <%= session[:user_id]%></li>
 </div>
-<div class="col-sm-2"></div>
-<div class="col-sm-8"></div>
-<div class="col-sm-2">
-    <%= link_to "edit profile", edit_user_path(@user) ,class:"btn btn-primary" %>
-</div>
-
-

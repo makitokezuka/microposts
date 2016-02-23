@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit,:update]
+  before_action :set_user, only: [:show,:edit,:update]
+  before_action :collect_user, only:[:edit,:update]
   
   def show
-    @user = User.find(params[:id])
   end  
   
   def new
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
   end
   
   def update
@@ -43,4 +42,15 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+  
+  def collect_user
+    if @user.id == session[:user_id]
+    else
+      flash[:info] = "権限がありません"
+      @user = User.find_by(id: session[:user_id])
+      redirect_to user_path
+    end
+    
+  end
+  
 end
