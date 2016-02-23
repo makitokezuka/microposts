@@ -11,9 +11,18 @@ before_action :logged_in_user, only: [:create]
             render 'static_pages/home'
         end
     end
+    
+    def destroy
+        @micropost = current.user.microposts.find.by(id: params[:id])
+        return redirect_to root_url if @micropost.nil?
+        @micropost.destroy
+        flash[:success]="Micropost deleted"
+        redirect_to request.referrer || root_url
+    end
 
 private
     def micropost_params
         params.require(:micropost).permit(:content)
     end
+    
 end
