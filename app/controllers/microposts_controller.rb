@@ -1,5 +1,6 @@
-class MiscropostsController < ApplicationController
-    before_action :logged_in_user, only: [:create]
+
+class MicropostsController < ApplicationController
+before_action :logged_in_user, only: [:create]
 
     def create
         @micropost = current_user.microposts.build(micropost_params)
@@ -10,8 +11,8 @@ class MiscropostsController < ApplicationController
             render 'static_pages/home'
         end
     end
-    
-    private
+
+private
     def micropost_params
         params.require(:micropost).permit(:content)
     end
