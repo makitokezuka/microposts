@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   end
   
   def collect_user
-    if @user.id == current_user
+    if @user == current_user
     else
       flash[:info] = "権限がありません"
       @user = current_user
