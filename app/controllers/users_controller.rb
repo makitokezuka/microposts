@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       flash[:info] = "プロフィールを変更しました"
     else
       #保存に失敗した場合は編集画面にもどす
-      render 'edit_user_path'
+      render 'edit'
     end
   end
   
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
   
   def collect_user
-    if @user.id == session[:user_id]
+    if @user.id == current_user
     else
       flash[:info] = "権限がありません"
       @user = current_user
