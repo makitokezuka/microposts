@@ -47,8 +47,8 @@ class UsersController < ApplicationController
     if @user.id == session[:user_id]
     else
       flash[:info] = "権限がありません"
-      @user = User.find_by(id: session[:user_id])
-      redirect_to user_path
+      @user = current_user
+      redirect_to user_path(@user)
     end
     
   end
