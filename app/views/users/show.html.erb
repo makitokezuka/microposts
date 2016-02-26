@@ -23,10 +23,10 @@
         </section>
         <section class="user_info col-sm-8 col-sm-offset-1">
              <div class="follow_button">
-                 <%= link_to "follwers", followers_path(current_user),class:"btn btn-md btn-primary btn-block"%>
+                 <%= link_to "follwers", followers_path(@user),class:"btn btn-md btn-primary btn-block"%>
              </div>
              <div class="follow_button">
-                 <%= link_to "followings", followings_path(current_user),class:"btn btn-md btn-success btn-block" %>
+                 <%= link_to "followings", followings_path(@user),class:"btn btn-md btn-success btn-block" %>
              </div>
         </section>
     </aside>
