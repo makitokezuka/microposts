@@ -1,0 +1,8 @@
+    <div>
+        followers
+        <ol>
+        <% @users.each do |user| %>
+            <li><%= user.name %>,<%=user.id %></li>
+        <% end %>
+        </ol>
+    </div>

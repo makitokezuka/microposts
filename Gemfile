@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'country_select'
 
+gem 'pry-byebug', group: :development
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

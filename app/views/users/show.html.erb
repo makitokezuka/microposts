@@ -29,4 +29,11 @@
             </ol>
         <% end %>
     </div>
+    
+    <div class="row">
+        <%= link_to "follwers", followers_path(current_user),class:"btn btn-sm btn-primary"%>
+    </div>
+    <div class="row">
+        <%= link_to "followings", followings_path(current_user),class:"btn btn-sm btn-primary" %>
+    </div>
 </div>
