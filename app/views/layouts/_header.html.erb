@@ -7,7 +7,7 @@
                 <li><%= link_to "Help", '#' %></li>
                 
                 <% if logged_in? %>
-                    <li><%= link_to "Users", '#' %></li>
+                    <li><%= link_to "Users",user_path(current_user) %></li>
                     <li class="dropdawn">
                         <a href="#" class="dropdoun-toggle" data-toggle="dropdown">
                             Acount <b class="caret"></b>

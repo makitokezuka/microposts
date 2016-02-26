@@ -5,7 +5,9 @@
             <h1>
                 <%= gravatar_for @user %>
                 <%= @user.name %>
-            </h1>            
+            </h1>
+        </section>
+        <section class="user_info">
             <div class ="row">
                 <div class ="col-sm-2">name</div>
                 <div class ="col-sm-8"><%= @user.name %></div>
@@ -17,7 +19,15 @@
              <div class ="row">
                 <div class ="col-sm-2">country</div>
                 <div class ="col-sm-8"><%= @user.country %></div>
-             </div> 
+             </div>
+        </section>
+        <section class="user_info col-sm-8 col-sm-offset-1">
+             <div class="follow_button">
+                 <%= link_to "follwers", followers_path(current_user),class:"btn btn-md btn-primary btn-block"%>
+             </div>
+             <div class="follow_button">
+                 <%= link_to "followings", followings_path(current_user),class:"btn btn-md btn-success btn-block" %>
+             </div>
         </section>
     </aside>
     <div class="col-md-8">
@@ -30,10 +40,6 @@
         <% end %>
     </div>
     
-    <div class="row">
-        <%= link_to "follwers", followers_path(current_user),class:"btn btn-sm btn-primary"%>
-    </div>
-    <div class="row">
-        <%= link_to "followings", followings_path(current_user),class:"btn btn-sm btn-primary" %>
-    </div>
+   
+    
 </div>
