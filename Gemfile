@@ -51,6 +51,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   
-  gem 'kaminari'
+  gem 'kaminari' #kaminari(ページ送り機能）の追加
+  gem 'therubyracer' #java script runtime. lessをコンパイルするために必要
+  gem 'less-rails' #Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
+  gem 'twitter-bootstrap-rails' #bootstrap 本体
 end
 
