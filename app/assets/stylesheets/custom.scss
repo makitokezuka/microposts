@@ -113,6 +113,9 @@ div.border {
 aside {
   section.user_info {
     margin-top: 20px;
+    .follow_button {
+      margin-top: 5px;
+    }
   }
   section {
     padding: 10px 0;
@@ -121,6 +124,8 @@ aside {
       border: 0;
       padding-top: 0;
     }
+    
+    
     span {
       display: block;
       margin-bottom: 3px;
