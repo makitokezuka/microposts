@@ -1,0 +1,2 @@
+class FavoriteMicropostsController < ApplicationController
+end
