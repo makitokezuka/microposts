@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   get 'edit', to: 'users#edit'
   get 'users/:id/followers', to: 'users#followers', as:  'followers'
   get 'users/:id/followings', to: 'users#followings' , as: 'followings'
-  post 'favorite', to: 'favorite_microposts#create', as: 'favorite'
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
   resources :relationships, only: [:create, :destroy]
+  resources :favorite_microposts, only: [:create, :destroy, :index]
 end
