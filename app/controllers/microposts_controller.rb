@@ -15,7 +15,7 @@ before_action :logged_in_user, only: [:create]
     end
     
     def destroy
-        @micropost = current.user.microposts.find.by(id: params[:id])
+        @micropost = current_user.microposts.find.by(id: params[:id])
         return redirect_to root_url if @micropost.nil?
         @micropost.destroy
         flash[:success]="Micropost deleted"

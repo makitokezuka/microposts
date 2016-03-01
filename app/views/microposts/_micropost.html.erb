@@ -1,3 +1,4 @@
+<div class ="col-md-10">
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
@@ -11,8 +12,9 @@
       <%= link_to "delete",micropost, method: :delete, data: {confirm: "You Sure?"} %>
     <% end %>
   </span>
-
+</div>
+<div class="col-md-2">
     <%= render 'favorite_microposts/favorite_micropost', micropost: micropost %>
-
+</div>
     
 </li>

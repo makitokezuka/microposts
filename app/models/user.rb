@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
     def feed_items
         Micropost.where(user_id: following_user_ids + [self.id])
     end
+    
+    def favorite(favorite_micropost)
+      favorite_microposts.find_or_create_by(micropost_id: favorite_micropost.micropost_id)
+    end
 end

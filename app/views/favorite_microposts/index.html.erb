@@ -7,23 +7,28 @@
         <table class="table table-hover">
             <thead>
              <tr>
-                <th class="col-sm-2">user id</th>
-                <th class="col-sm-8">micropost id</th>
+                <th class="col-sm-1">favorite by who</th>
+                <th class="col-sm-2">who's micropost</th>
+                <th class="col-sm-1">micropost id</th>
+                <th class="col-sm-1">favorite_micropost.id</th>
+                <th class="col-sm-6">micropost</th>
+                <th class="col-sm-2">delete</th>
              </tr>
             </thead>
             <tbody>
             <% @favorite_microposts.each do |favorite_micropost| %>
               <tr>
-                <td>
-                    <%= favorite_micropost.user_id %>
-                </td>
-                <td>
-                    <%= favorite_micropost.micropost_id %>
-                </td>
+                <td><%= favorite_micropost.user_id %></td>
+                <td><%= favorite_micropost.micropost.user_id %></td>
+                <td><%= favorite_micropost.micropost_id %></td>
+                <td><%= favorite_micropost.id %></td>
+                <td><%= favorite_micropost.micropost.content %></td>
+                <td><%= link_to "delete",favorite_micropost_path(favorite_micropost), method: :delete, data: {confirm: "You Sure?"} %></td>
+
               </tr>
             <% end %>
             </tbody>
         </table>
-
+    <%= link_to "back",root_path, class: "btn btn-primary"%>
     </div>
 </div>
