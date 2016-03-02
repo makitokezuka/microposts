@@ -8,7 +8,8 @@ before_action :logged_in_user, only: [:create]
             flash[:success] = "micropost created"
             redirect_to root_url
         else
-            ＠feed_items =current_user.feed_items.includes(:user).order(created_at: :desc)
+            @user = current_user
+            @feed_items = current_user.feed_items.includes(:user).order(created_at: :desc).page params[:page]
             #10.2で追加。エラーが発生した場合にはstatic_pagesを利用するために先に読み込んでおく。
             render 'static_pages/home'
         end
